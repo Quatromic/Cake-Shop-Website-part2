@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans:wght@100&family=Oswald:wght@200&family=Roboto:wght@100&display=swap');
+:root{
+    --header-font:"Dancing Script",sans-serif;
+    --description-font:"Noto Sans",sans-serif;
+}
+
+header{
+    width:98.6%;
+    display:flex;
+    flex-direction: row;
+    position:fixed;
+    top:0;
+}
+header h1{
+    font-family:var(--header-font);
+    margin-left:125px;
+}
+
+#navbar ul{
+    list-style: none;
+    position:absolute;
+    width:450px;
+    left:800px;
+    top:17px;
+    display:flex;
+    justify-content: space-between;
+}
+#navbar ul li a{
+    color:black;
+    font-family:var(--description-font);
+    text-decoration:none;
+    position: relative;
+}
+#navbar ul li a::after{
+    content:'';
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    background-color: black;
+    width:100%;
+    height:1px;
+    transform-origin: bottom left;
+    transform: scale(0);
+    transition:all .5s ease-in-out;
+}
+#navbar ul li a:hover::after{
+    cursor: pointer;
+    transform: scale(1);
+    transform-origin: bottom right;
+}
+
+#submenu:hover #menu{
+    opacity: 1;
+    transform:translate3d(0,0,0);
+}
+#menu{
+    display: block !important;
+    position:absolute !important;
+    line-height: 35px  !important;
+    top:45px !important;
+    left:250px !important;
+    text-align: center !important;
+    width:auto !important;
+    height:auto !important;
+    border:1px solid black;
+    border-radius: 10px;
+    padding: 4px !important;
+    box-shadow: 5px 5px 10px 0px rgba(150,150,150,1);
+    transition: all .5s ease-in-out;
+    transform: translate3d(-50px,0,0);
+    opacity: 0;
+}
+#menu li{
+    padding-right:95px !important;
+    padding-left:25px ;
+    border:1px solid black;
+    border-radius: 5px;
+    line-height: 45px;
+    margin:5px;
+}
+#menu li a{
+    transition: all .5s ease-in-out;
+}
+#menu li a:hover{
+    padding-right:30px;   
+}
