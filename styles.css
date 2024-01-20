@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans:wght@100&family=Open+Sans:wght@300&family=Oswald:wght@200&display=swap');
+
 :root{
-    --header-font:"Open Sans",sans-serif
-    --header-font-weight:lighter
+    --header-font:"Oswald",sans-serif;
+    --header-font-weight:lighter;
     --text-font:"Noto Sans",sans-serif;
     --special-font:"Dancing Script",sans-serif;
 }
-
 
 /*Navigation bar*/
 nav{
@@ -16,19 +17,116 @@ nav{
 }
 nav header h1{
     font-family:var(--header-font);
+    font-weight:var(--header-font-weight);
     text-decoration:underline;
     margin-left:50px;
 }
 nav ul{
     list-style-type:none;
     display:flex;
-    justify-content: space-evenly;
-    width:400px;
+    justify-content: space-around;
+    width:450px;
     position:relative;
     left:290px;
-    top:11px;
+    top:15px;
 }
 nav ul li a{
-    color:black;
+    font-family:var(--text-font);
+    color:grey;
+    font-size:17px;
     text-decoration: none;
+    position: relative;
+    transition: color .5s ease-in-out;
+}
+nav ul li a:hover{
+    color:black;
+}
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:1px;
+    background-color: black;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition:transform 1s ease-in-out;
+}
+nav ul li a:hover::after{
+    transform:scale(1);
+    transform-origin: bottom left;
+}
+
+/*Sub-menu*/
+#menu{
+    position:absolute;
+    left:250px;
+    top:35px;
+    display:flex;
+    flex-direction: column;
+    border-right:1px solid black;
+    width:30%;
+    line-height: 30px;
+    opacity: 0;
+    transform:translate3d(-25px,0,0);
+    transition:opacity .5s ease-in-out,transform .5s ease-in-out;
+}
+#menu li{
+    border-bottom:1px solid black;
+    width:120px;
+    margin:10px;
+    margin-right:25px;
+    padding-left:10px;
+}
+#has_menu:hover #menu{
+    opacity: 1;
+    transform:translate3d(0,0,0);
+}
+#has_menu::after{
+    content:'>';
+    font-weight:lighter;
+    color:grey;
+    margin-left:5px;
+}
+
+/*Intro*/
+#intro{
+    height:87.09vh;
+}
+#intro header{
+    border-bottom:1px solid black;
+    position:relative;
+    top:205px;
+    left:75px;
+    width:550px;
+    margin-left:50px;
+    text-align: center;
+    font-family: var(--text-font);
+    font-size:20px;
+    padding:20px;
+    box-shadow: 10px 20px 5px 5px rgba(0,0,0,.3);
+    border-radius:10px;
+}
+#intro header h2{
+    font-family:var(--special-font) !important;
+}
+#line{
+    width:300px;
+    height:1px;
+    background-color: black;
+    margin:-10px auto 0 auto;
+}
+
+/*Intro images*/
+#images{
+    position:absolute;
+    left:75%;
+    width:250px;
+    height:250px;
+}
+#images img{
+    width:200px;
+    height:200px;
+    object-fit: contain;
 }
