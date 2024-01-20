@@ -7,59 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="intro">
+    <nav>
         <header>
             <h1>Inclyne Cake Studios</h1>
-            <nav id="navbar">
-                <ul>
-                    <li><a href="#">Intro</a></li>
-                    <li><a href="#">About</a></li>
-                    <li id="submenu">
-                        <a href="#">Services</a>
-                        <ul id="menu">
-                            <li><a href="#">Cakes</a></li>
-                            <li><a href="#">Pastries</a></li>
-                            <li><a href="#">Cupcakes</a></li>
-                            <li><a href="#">Delivery</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
         </header>
-        <section id="one">
-            <div id="text">
-                <h1>
-                    <span>Creating</span>
-                    <span id="text"></span>
-                </h1>
-            </div>
-        </section>
-    </div>
+        <ul>
+            <li><a href="#">Intro</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
-    <script>
-        const Text = document.getElementById("text")
-
-        const words = ['Cakes','Pastries','Cupcakes','and more']
-
-        let texttl = gsap.timeline({
-            repeat:-1
-        })
-
-        words.forEach((word) => {
-            let TextAnim = gsap.timeline({
-                repeatDelay:5,
-                yoyo:true,
-                repeat:1
-            })
-
-            TextAnim.to(Text,{
-                text:word,
-                duration:1
-            })
-        })
-    </script>
 </body>
 </html>
