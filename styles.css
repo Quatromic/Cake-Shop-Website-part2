@@ -7,6 +7,12 @@
     --special-font:"Dancing Script",sans-serif;
 }
 
+body{
+    background:linear-gradient(#cff,#fcc,rgba(162, 155, 155, 0.3));
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+}
+
 /*Navigation bar*/
 nav{
     display:flex;
@@ -97,7 +103,7 @@ nav ul li a:hover::after{
 #intro header{
     border-bottom:1px solid black;
     position:relative;
-    top:205px;
+    top:220px;
     left:75px;
     width:550px;
     margin-left:50px;
@@ -111,6 +117,29 @@ nav ul li a:hover::after{
 #intro header h2{
     font-family:var(--special-font) !important;
 }
+#social-icons{
+    margin-top:15px;
+    display:flex;
+    margin:20px auto 0 auto;
+    width:250px;
+    justify-content: space-around;
+}
+#social-icons span{
+    width:10px;
+    height:1px;
+    background-color: black;
+    margin-top:15px;
+}
+#social-icons a{
+    color:grey;
+    transition:color .5s ease-in-out;
+}
+#social-icons a:hover{
+    color:black;
+}
+#text{
+    text-decoration: underline;
+}
 #line{
     width:300px;
     height:1px;
@@ -121,12 +150,157 @@ nav ul li a:hover::after{
 /*Intro images*/
 #images{
     position:absolute;
-    left:75%;
-    width:250px;
+    padding:10px;
+    padding-right:30px;
+    border-right:1px solid black;
+    bottom:250px;
+    left:65%;
+    width:375px;
     height:250px;
 }
 #images img{
-    width:200px;
-    height:200px;
+    width:auto;
+    height:250px;
     object-fit: contain;
+    border-right:1px solid black;
+    border-radius:15px;
+}
+#images button{
+    position: absolute;
+}
+#image p{
+    text-align: center;
+    font-family:var(--special-font);
+    text-decoration:underline;
+}
+#image2{
+    position:relative;
+    bottom:310px;
+    left:15px;
+    z-index: -1;
+}
+#front,#back{
+    background:transparent;
+    transform:rotate(180deg);
+    position:relative;
+    font-size:25px;
+    border:none;
+    border-top:1px solid black;
+}
+#front:hover,#back:hover{
+    cursor: pointer;
+}
+#front{
+    top:115px;
+    right:420px;
+}
+#front:hover{
+    animation-name:front;
+    animation-duration:.5s;
+}
+#back:hover{
+    animation-name:back;
+    animation-duration:.5s;
+}
+#back{
+    top:115px;
+    left:430px;
+}
+
+/*Animations*/
+#front:hover,#back:hover,#more p:last-child::after{
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes front{
+    to{
+        right:430px;
+    }
+}
+@keyframes back{
+    to{
+        left:450px;
+    }
+}
+@keyframes down{
+    from{
+        top:-5px;
+    }
+    to{
+        top:20px;
+    }
+}
+
+/*Intro more text*/
+#more{
+    position:absolute;
+    bottom:30px;
+    width:98.9%;
+    text-align: center;
+    font-family:var(--special-font);
+}
+#more p:last-child::after{
+    content: url('./Images/icon-arrow-down.svg');
+    position:relative;
+    animation-name:down;
+    animation-duration: 1s;
+}
+
+/*about*/
+#about{
+    position:relative;
+    top:20px;
+}
+#text1{
+    margin:0 auto;
+    width:1250px;
+    height:125px;
+}
+#Story1,#Story2{
+    width:350px;
+    height:300px;
+    position: relative;
+    left:800px;
+    bottom:40px;
+}
+#story1,#story2{
+    width:auto;
+    height:250px;
+    float:right;
+    border:1px solid black;
+    border-radius: 25px;
+}
+#S1{
+    height:400px;
+}
+#Text{
+    width:600px;
+    position:relative;
+    top:150px;
+    border-bottom:1px solid black;
+}
+#Text h2{
+    text-align:center;
+    font-family:var(--header-font);
+}
+#Text p{
+    font-family:var(--text-font);
+    line-height: 30px;
+}
+#line1{
+    height:300px;
+    width:5px;
+    position: absolute;
+    margin-right:50px;
+    right:0px;
+    background-color: grey;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#Text2{
+    position:relative;
+    top:10px;
 }
