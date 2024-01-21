@@ -7,6 +7,10 @@
     --special-font:"Dancing Script",sans-serif;
 }
 
+*{
+    scroll-behavior:smooth;
+}
+
 body{
     background:linear-gradient(#cff,#fcc);
     background-attachment:fixed;
